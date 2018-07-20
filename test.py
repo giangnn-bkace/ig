@@ -74,6 +74,34 @@ _CHECKPOINT_PATHS = {
     #'flow': '/home/alexhu/I3DFORFLOW/I3D_FLOW/model/ucf101_flow_0.946_model-9540',
     #    'rgb': '/data1/yunfeng/i3d_test/model/dp_0.3_d_0.9/hmdb51_obj_rgb_0.515_model-23166',
 }
+_CHECKPOINT_PATHS_RGB = [
+	os.path.join('output', 'finetune-clipped_data-rgb-1', 'clipped_data_rgb_0.980_model-34350'),
+	os.path.join('output', 'finetune-clipped_data-rgb-2', 'clipped_data_rgb_0.980_model-34350'),
+	os.path.join('output', 'finetune-clipped_data-rgb-3', 'clipped_data_rgb_0.980_model-34350'),
+	os.path.join('output', 'finetune-clipped_data-rgb-4', 'clipped_data_rgb_0.980_model-34350'),
+	os.path.join('output', 'finetune-clipped_data-rgb-5', 'clipped_data_rgb_0.980_model-34350'),
+	os.path.join('output', 'finetune-clipped_data-rgb-6', 'clipped_data_rgb_0.980_model-34350'),
+	os.path.join('output', 'finetune-clipped_data-rgb-7', 'clipped_data_rgb_0.980_model-34350'),
+	os.path.join('output', 'finetune-clipped_data-rgb-8', 'clipped_data_rgb_0.980_model-34350'),
+	os.path.join('output', 'finetune-clipped_data-rgb-9', 'clipped_data_rgb_0.980_model-34350'),
+	os.path.join('output', 'finetune-clipped_data-rgb-10', 'clipped_data_rgb_0.980_model-34350'),
+	os.path.join('output', 'finetune-clipped_data-rgb-11', 'clipped_data_rgb_0.980_model-34350'),
+	os.path.join('output', 'finetune-clipped_data-rgb-12', 'clipped_data_rgb_0.980_model-34350')
+]
+_CHECKPOINT_PATHS_FLOW = [
+	os.path.join('output', 'finetune-clipped_data-flow-1', 'clipped_data_flow_0.913_model-32050'),
+	os.path.join('output', 'finetune-clipped_data-flow-2', 'clipped_data_flow_0.913_model-32050'),
+	os.path.join('output', 'finetune-clipped_data-flow-3', 'clipped_data_flow_0.913_model-32050'),
+	os.path.join('output', 'finetune-clipped_data-flow-4', 'clipped_data_flow_0.913_model-32050'),
+	os.path.join('output', 'finetune-clipped_data-flow-5', 'clipped_data_flow_0.913_model-32050'),
+	os.path.join('output', 'finetune-clipped_data-flow-6', 'clipped_data_flow_0.913_model-32050'),
+	os.path.join('output', 'finetune-clipped_data-flow-7', 'clipped_data_flow_0.913_model-32050'),
+	os.path.join('output', 'finetune-clipped_data-flow-8', 'clipped_data_flow_0.913_model-32050'),
+	os.path.join('output', 'finetune-clipped_data-flow-9', 'clipped_data_flow_0.913_model-32050'),
+	os.path.join('output', 'finetune-clipped_data-flow-10', 'clipped_data_flow_0.913_model-32050'),
+	os.path.join('output', 'finetune-clipped_data-flow-11', 'clipped_data_flow_0.913_model-32050'),
+	os.path.join('output', 'finetune-clipped_data-flow-12', 'clipped_data_flow_0.913_model-32050')
+]
 
 _CHANNEL = {
     'rgb': 3,
@@ -186,9 +214,9 @@ def main(dataset, mode, split):
     sess = tf.Session()
     sess.run(tf.global_variables_initializer())
     if mode in ['rgb', 'mixed']:
-        rgb_saver.restore(sess, _CHECKPOINT_PATHS['rgb'])
+        rgb_saver.restore(sess, _CHECKPOINT_PATHS_RGB[int(split)])
     if mode in ['flow', 'mixed']:
-        flow_saver.restore(sess, _CHECKPOINT_PATHS['flow'])
+        flow_saver.restore(sess, _CHECKPOINT_PATHS_FLOW[int(split)])
 
     if mode in ['rgb', 'mixed']:
         # Start Queue
