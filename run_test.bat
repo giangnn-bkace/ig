@@ -1,3 +1,12 @@
-python test.py clipped_data rgb 7
-python test.py clipped_data flow 7
+python test.py clipped_data mixed 1
+python test.py clipped_data mixed 2
+python test.py clipped_data mixed 3
+python test.py clipped_data mixed 4
+python test.py clipped_data mixed 5
+python test.py clipped_data mixed 6
 python test.py clipped_data mixed 7
+python test.py clipped_data mixed 8
+python test.py clipped_data mixed 9
+python test.py clipped_data mixed 10
+python test.py clipped_data mixed 11
+python test.py clipped_data mixed 12
