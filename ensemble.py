@@ -75,14 +75,80 @@ _CHECKPOINT_PATHS = {
     #    'rgb': '/data1/yunfeng/i3d_test/model/dp_0.3_d_0.9/hmdb51_obj_rgb_0.515_model-23166',
 }
 _CHECKPOINT_PATHS_RGB = [
-	os.path.join('output', 'finetune-clipped_data-rgb-1', 'clipped_data_rgb-34350'),
-	os.path.join('output', 'finetune-clipped_data-rgb-1', 'clipped_data_rgb-27480'),
-	os.path.join('output', 'finetune-clipped_data-rgb-1', 'clipped_data_rgb-20610')
+        [os.path.join('output', 'finetune-clipped_data-rgb-1', 'clipped_data_rgb-34350'),
+         os.path.join('output', 'finetune-clipped_data-rgb-1', 'clipped_data_rgb-27480'),
+         os.path.join('output', 'finetune-clipped_data-rgb-1', 'clipped_data_rgb-20610')],
+        [os.path.join('output', 'finetune-clipped_data-rgb-2', 'clipped_data_rgb-34650'),
+         os.path.join('output', 'finetune-clipped_data-rgb-2', 'clipped_data_rgb-27720'),
+         os.path.join('output', 'finetune-clipped_data-rgb-2', 'clipped_data_rgb-20790')],
+        [os.path.join('output', 'finetune-clipped_data-rgb-3', 'clipped_data_rgb-34600'),
+         os.path.join('output', 'finetune-clipped_data-rgb-3', 'clipped_data_rgb-27680'),
+         os.path.join('output', 'finetune-clipped_data-rgb-3', 'clipped_data_rgb-20760')],
+        [os.path.join('output', 'finetune-clipped_data-rgb-4', 'clipped_data_rgb-33150'),
+         os.path.join('output', 'finetune-clipped_data-rgb-4', 'clipped_data_rgb-26520'),
+         os.path.join('output', 'finetune-clipped_data-rgb-4', 'clipped_data_rgb-19890')],
+        [os.path.join('output', 'finetune-clipped_data-rgb-5', 'clipped_data_rgb-34050'),
+         os.path.join('output', 'finetune-clipped_data-rgb-5', 'clipped_data_rgb-27240'),
+         os.path.join('output', 'finetune-clipped_data-rgb-5', 'clipped_data_rgb-20430')],
+        [os.path.join('output', 'finetune-clipped_data-rgb-6', 'clipped_data_rgb-34450'),
+         os.path.join('output', 'finetune-clipped_data-rgb-6', 'clipped_data_rgb-27560'),
+         os.path.join('output', 'finetune-clipped_data-rgb-6', 'clipped_data_rgb-20670')],
+        [os.path.join('output', 'finetune-clipped_data-rgb-7', 'clipped_data_rgb-32050'),
+         os.path.join('output', 'finetune-clipped_data-rgb-7', 'clipped_data_rgb-25640'),
+         os.path.join('output', 'finetune-clipped_data-rgb-7', 'clipped_data_rgb-19230')],
+        [os.path.join('output', 'finetune-clipped_data-rgb-8', 'clipped_data_rgb-34250'),
+         os.path.join('output', 'finetune-clipped_data-rgb-8', 'clipped_data_rgb-27400'),
+         os.path.join('output', 'finetune-clipped_data-rgb-8', 'clipped_data_rgb-20550')],
+        [os.path.join('output', 'finetune-clipped_data-rgb-9', 'clipped_data_rgb-34400'),
+         os.path.join('output', 'finetune-clipped_data-rgb-9', 'clipped_data_rgb-27520'),
+         os.path.join('output', 'finetune-clipped_data-rgb-9', 'clipped_data_rgb-20640')],
+        [os.path.join('output', 'finetune-clipped_data-rgb-10', 'clipped_data_rgb-32950'),
+         os.path.join('output', 'finetune-clipped_data-rgb-10', 'clipped_data_rgb-26360'),
+         os.path.join('output', 'finetune-clipped_data-rgb-10', 'clipped_data_rgb-19770')],
+        [os.path.join('output', 'finetune-clipped_data-rgb-11', 'clipped_data_rgb-31750'),
+         os.path.join('output', 'finetune-clipped_data-rgb-11', 'clipped_data_rgb-25400'),
+         os.path.join('output', 'finetune-clipped_data-rgb-11', 'clipped_data_rgb-19050')],
+        [os.path.join('output', 'finetune-clipped_data-rgb-12', 'clipped_data_rgb-20900'),
+         os.path.join('output', 'finetune-clipped_data-rgb-12', 'clipped_data_rgb-16720'),
+         os.path.join('output', 'finetune-clipped_data-rgb-12', 'clipped_data_rgb-12540')]
 ]
 _CHECKPOINT_PATHS_FLOW = [
-	os.path.join('output', 'finetune-clipped_data-flow-1', 'clipped_data_flow-34350'),
-	os.path.join('output', 'finetune-clipped_data-flow-1', 'clipped_data_flow-27480'),
-	os.path.join('output', 'finetune-clipped_data-flow-1', 'clipped_data_flow-20610')
+        [os.path.join('output', 'finetune-clipped_data-flow-1', 'clipped_data_flow-34350'),
+         os.path.join('output', 'finetune-clipped_data-flow-1', 'clipped_data_flow-27480'),
+         os.path.join('output', 'finetune-clipped_data-flow-1', 'clipped_data_flow-20610')],
+        [os.path.join('output', 'finetune-clipped_data-flow-2', 'clipped_data_flow-34650'),
+         os.path.join('output', 'finetune-clipped_data-flow-2', 'clipped_data_flow-27720'),
+         os.path.join('output', 'finetune-clipped_data-flow-2', 'clipped_data_flow-20790')],
+        [os.path.join('output', 'finetune-clipped_data-flow-3', 'clipped_data_flow-34600'),
+         os.path.join('output', 'finetune-clipped_data-flow-3', 'clipped_data_flow-27680'),
+         os.path.join('output', 'finetune-clipped_data-flow-3', 'clipped_data_flow-20760')],
+        [os.path.join('output', 'finetune-clipped_data-flow-4', 'clipped_data_flow-33150'),
+         os.path.join('output', 'finetune-clipped_data-flow-4', 'clipped_data_flow-26520'),
+         os.path.join('output', 'finetune-clipped_data-flow-4', 'clipped_data_flow-19890')],
+        [os.path.join('output', 'finetune-clipped_data-flow-5', 'clipped_data_flow-34050'),
+         os.path.join('output', 'finetune-clipped_data-flow-5', 'clipped_data_flow-27240'),
+         os.path.join('output', 'finetune-clipped_data-flow-5', 'clipped_data_flow-20430')],
+        [os.path.join('output', 'finetune-clipped_data-flow-6', 'clipped_data_flow-34450'),
+         os.path.join('output', 'finetune-clipped_data-flow-6', 'clipped_data_flow-27560'),
+         os.path.join('output', 'finetune-clipped_data-flow-6', 'clipped_data_flow-20670')],
+        [os.path.join('output', 'finetune-clipped_data-flow-7', 'clipped_data_flow-32050'),
+         os.path.join('output', 'finetune-clipped_data-flow-7', 'clipped_data_flow-25640'),
+         os.path.join('output', 'finetune-clipped_data-flow-7', 'clipped_data_flow-19230')],
+        [os.path.join('output', 'finetune-clipped_data-flow-8', 'clipped_data_flow-34250'),
+         os.path.join('output', 'finetune-clipped_data-flow-8', 'clipped_data_flow-27400'),
+         os.path.join('output', 'finetune-clipped_data-flow-8', 'clipped_data_flow-20550')],
+        [os.path.join('output', 'finetune-clipped_data-flow-9', 'clipped_data_flow-34400'),
+         os.path.join('output', 'finetune-clipped_data-flow-9', 'clipped_data_flow-27520'),
+         os.path.join('output', 'finetune-clipped_data-flow-9', 'clipped_data_flow-20640')],
+        [os.path.join('output', 'finetune-clipped_data-flow-10', 'clipped_data_flow-32950'),
+         os.path.join('output', 'finetune-clipped_data-flow-10', 'clipped_data_flow-26360'),
+         os.path.join('output', 'finetune-clipped_data-flow-10', 'clipped_data_flow-19770')],
+        [os.path.join('output', 'finetune-clipped_data-flow-11', 'clipped_data_flow-31750'),
+         os.path.join('output', 'finetune-clipped_data-flow-11', 'clipped_data_flow-25400'),
+         os.path.join('output', 'finetune-clipped_data-flow-11', 'clipped_data_flow-19050')],
+        [os.path.join('output', 'finetune-clipped_data-flow-12', 'clipped_data_flow-20900'),
+         os.path.join('output', 'finetune-clipped_data-flow-12', 'clipped_data_flow-16720'),
+         os.path.join('output', 'finetune-clipped_data-flow-12', 'clipped_data_flow-12540')]
 ]
 
 _CHANNEL = {
@@ -167,13 +233,13 @@ def main(dataset, mode, split):
     sess3 = tf.Session()
     
     if mode in ['rgb']:
-        rgb_saver.restore(sess1, _CHECKPOINT_PATHS_RGB[0])
-        rgb_saver.restore(sess2, _CHECKPOINT_PATHS_RGB[1])
-        rgb_saver.restore(sess3, _CHECKPOINT_PATHS_RGB[2])
+        rgb_saver.restore(sess1, _CHECKPOINT_PATHS_RGB[int(split)-1][0])
+        rgb_saver.restore(sess2, _CHECKPOINT_PATHS_RGB[int(split)-1][1])
+        rgb_saver.restore(sess3, _CHECKPOINT_PATHS_RGB[int(split)-1][2])
     if mode in ['flow']:
-        flow_saver.restore(sess1, _CHECKPOINT_PATHS_FLOW[0])
-        flow_saver.restore(sess2, _CHECKPOINT_PATHS_FLOW[1])
-        flow_saver.restore(sess3, _CHECKPOINT_PATHS_FLOW[2])
+        flow_saver.restore(sess1, _CHECKPOINT_PATHS_FLOW[int(split)-1][0])
+        flow_saver.restore(sess2, _CHECKPOINT_PATHS_FLOW[int(split)-1][1])
+        flow_saver.restore(sess3, _CHECKPOINT_PATHS_FLOW[int(split)-1][2])
     
     
     sess.run(tf.global_variables_initializer())

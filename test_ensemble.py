@@ -76,31 +76,31 @@ _CHECKPOINT_PATHS = {
 }
 _CHECKPOINT_PATHS_RGB = [
 	os.path.join('output', 'ensemble-clipped_data-rgb-1', 'clipped_data_rgb-3'),
-	os.path.join('output', 'finetune-clipped_data-rgb-2', 'clipped_data_rgb-34650'),
-	os.path.join('output', 'finetune-clipped_data-rgb-3', 'clipped_data_rgb-34600'),
-	os.path.join('output', 'finetune-clipped_data-rgb-4', 'clipped_data_rgb-33150'),
-	os.path.join('output', 'finetune-clipped_data-rgb-5', 'clipped_data_rgb-34050'),
-	os.path.join('output', 'finetune-clipped_data-rgb-6', 'clipped_data_rgb-34450'),
-	os.path.join('output', 'finetune-clipped_data-rgb-7', 'clipped_data_rgb-32050'),
-	os.path.join('output', 'finetune-clipped_data-rgb-8', 'clipped_data_rgb-34250'),
-	os.path.join('output', 'finetune-clipped_data-rgb-9', 'clipped_data_rgb-34400'),
-	os.path.join('output', 'finetune-clipped_data-rgb-10', 'clipped_data_rgb-32950'),
-	os.path.join('output', 'finetune-clipped_data-rgb-11', 'clipped_data_rgb-31750'),
-	os.path.join('output', 'finetune-clipped_data-rgb-12', 'clipped_data_rgb-20900')
+	os.path.join('output', 'ensemble-clipped_data-rgb-2', 'clipped_data_rgb-3'),
+	os.path.join('output', 'ensemble-clipped_data-rgb-3', 'clipped_data_rgb-3'),
+	os.path.join('output', 'ensemble-clipped_data-rgb-4', 'clipped_data_rgb-3'),
+	os.path.join('output', 'ensemble-clipped_data-rgb-5', 'clipped_data_rgb-3'),
+	os.path.join('output', 'ensemble-clipped_data-rgb-6', 'clipped_data_rgb-3'),
+	os.path.join('output', 'ensemble-clipped_data-rgb-7', 'clipped_data_rgb-3'),
+	os.path.join('output', 'ensemble-clipped_data-rgb-8', 'clipped_data_rgb-3'),
+	os.path.join('output', 'ensemble-clipped_data-rgb-9', 'clipped_data_rgb-3'),
+	os.path.join('output', 'ensemble-clipped_data-rgb-10', 'clipped_data_rgb-3'),
+	os.path.join('output', 'ensemble-clipped_data-rgb-11', 'clipped_data_rgb-3'),
+	os.path.join('output', 'ensemble-clipped_data-rgb-12', 'clipped_data_rgb-3')
 ]
 _CHECKPOINT_PATHS_FLOW = [
 	os.path.join('output', 'ensemble-clipped_data-flow-1', 'clipped_data_flow-3'),
-	os.path.join('output', 'finetune-clipped_data-flow-2', 'clipped_data_flow-34650'),
-	os.path.join('output', 'finetune-clipped_data-flow-3', 'clipped_data_flow-34600'),
-	os.path.join('output', 'finetune-clipped_data-flow-4', 'clipped_data_flow-33150'),
-	os.path.join('output', 'finetune-clipped_data-flow-5', 'clipped_data_flow-34050'),
-	os.path.join('output', 'finetune-clipped_data-flow-6', 'clipped_data_flow-34450'),
-	os.path.join('output', 'finetune-clipped_data-flow-7', 'clipped_data_flow-32050'),
-	os.path.join('output', 'finetune-clipped_data-flow-8', 'clipped_data_flow-34250'),
-	os.path.join('output', 'finetune-clipped_data-flow-9', 'clipped_data_flow-34400'),
-	os.path.join('output', 'finetune-clipped_data-flow-10', 'clipped_data_flow-32950'),
-	os.path.join('output', 'finetune-clipped_data-flow-11', 'clipped_data_flow-31750'),
-	os.path.join('output', 'finetune-clipped_data-flow-12', 'clipped_data_flow-20900')
+	os.path.join('output', 'ensemble-clipped_data-flow-2', 'clipped_data_flow-3'),
+	os.path.join('output', 'ensemble-clipped_data-flow-3', 'clipped_data_flow-3'),
+	os.path.join('output', 'ensemble-clipped_data-flow-4', 'clipped_data_flow-3'),
+	os.path.join('output', 'ensemble-clipped_data-flow-5', 'clipped_data_flow-3'),
+	os.path.join('output', 'ensemble-clipped_data-flow-6', 'clipped_data_flow-3'),
+	os.path.join('output', 'ensemble-clipped_data-flow-7', 'clipped_data_flow-3'),
+	os.path.join('output', 'ensemble-clipped_data-flow-8', 'clipped_data_flow-3'),
+	os.path.join('output', 'ensemble-clipped_data-flow-9', 'clipped_data_flow-3'),
+	os.path.join('output', 'ensemble-clipped_data-flow-10', 'clipped_data_flow-3'),
+	os.path.join('output', 'ensemble-clipped_data-flow-11', 'clipped_data_flow-3'),
+	os.path.join('output', 'ensemble-clipped_data-flow-12', 'clipped_data_flow-3')
 ]
 
 _CHANNEL = {
