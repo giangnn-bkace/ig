@@ -76,11 +76,13 @@ _CHECKPOINT_PATHS = {
 }
 _CHECKPOINT_PATHS_RGB = [
 	os.path.join('output', 'finetune-clipped_data-rgb-1', 'clipped_data_rgb-34350'),
-	os.path.join('output', 'finetune-clipped_data-rgb-1', 'clipped_data_rgb-27480')
+	os.path.join('output', 'finetune-clipped_data-rgb-1', 'clipped_data_rgb-27480'),
+	os.path.join('output', 'finetune-clipped_data-rgb-1', 'clipped_data_rgb-20610')
 ]
 _CHECKPOINT_PATHS_FLOW = [
 	os.path.join('output', 'finetune-clipped_data-flow-1', 'clipped_data_flow-34350'),
-	os.path.join('output', 'finetune-clipped_data-flow-1', 'clipped_data_flow-27480')
+	os.path.join('output', 'finetune-clipped_data-flow-1', 'clipped_data_flow-27480'),
+	os.path.join('output', 'finetune-clipped_data-flow-1', 'clipped_data_flow-20610')
 ]
 
 _CHANNEL = {
@@ -119,7 +121,7 @@ def main(dataset, mode, split):
             rgb_model = i3d.InceptionI3d(
                 400, spatial_squeeze=True, final_endpoint='Logits')
             rgb_logits, _ = rgb_model(
-                rgb_holder, is_training=False, dropout_keep_prob=1)
+                rgb_holder, is_training=True, dropout_keep_prob=1)
             rgb_logits_dropout = tf.nn.dropout(rgb_logits, 1)
             rgb_fc_out = tf.layers.dense(
                 rgb_logits_dropout, _CLASS_NUM[dataset], tf.nn.relu, use_bias=True)
@@ -129,7 +131,7 @@ def main(dataset, mode, split):
             flow_model = i3d.InceptionI3d(
                 400, spatial_squeeze=True, final_endpoint='Logits')
             flow_logits, _ = flow_model(
-                flow_holder, is_training=False, dropout_keep_prob=1)
+                flow_holder, is_training=True, dropout_keep_prob=1)
             flow_logits_dropout = tf.nn.dropout(flow_logits, 1)
             flow_fc_out = tf.layers.dense(
                 flow_logits_dropout, _CLASS_NUM[dataset], use_bias=True)
@@ -143,7 +145,6 @@ def main(dataset, mode, split):
             if tmp[0] == _SCOPE['rgb']:
                 variable_map[variable.name.replace(':0', '')] = variable
         rgb_saver = tf.train.Saver(var_list=variable_map)
-    variable_map = {}
     if mode in ['flow']:
         for variable in tf.global_variables():
             tmp = variable.name.split('/')
@@ -152,13 +153,7 @@ def main(dataset, mode, split):
         flow_saver = tf.train.Saver(var_list=variable_map, reshape=True)
 
     # Edited Version by AlexHu
-    if mode == 'rgb':
-        fc_out = rgb_fc_out
-        softmax = tf.nn.softmax(fc_out)
-    if mode == 'flow':
-        fc_out = flow_fc_out
-        softmax = tf.nn.softmax(fc_out)
-    top_k_op = tf.nn.in_top_k(softmax, label_holder, 1)
+    
 
     # GPU config
     # config = tf.ConfigProto()
@@ -169,32 +164,48 @@ def main(dataset, mode, split):
     sess = tf.Session()
     sess1 = tf.Session()
     sess2 = tf.Session()
+    sess3 = tf.Session()
     
     if mode in ['rgb']:
         rgb_saver.restore(sess1, _CHECKPOINT_PATHS_RGB[0])
+        rgb_saver.restore(sess2, _CHECKPOINT_PATHS_RGB[1])
+        rgb_saver.restore(sess3, _CHECKPOINT_PATHS_RGB[2])
     if mode in ['flow']:
         flow_saver.restore(sess1, _CHECKPOINT_PATHS_FLOW[0])
-    
-    if mode in ['rgb']:
-        rgb_saver.restore(sess2, _CHECKPOINT_PATHS_RGB[1])
-    if mode in ['flow']:
         flow_saver.restore(sess2, _CHECKPOINT_PATHS_FLOW[1])
+        flow_saver.restore(sess3, _CHECKPOINT_PATHS_FLOW[2])
+    
+    
+    sess.run(tf.global_variables_initializer())
+    
+    #variable = tf.global_variables()[0]
+    #print(sess1.run(variable))
+    #print(variable.name)
     
     
     if mode in ['rgb']:
         for variable in tf.global_variables():
             tmp = variable.name.split('/')
             if tmp[0] == _SCOPE['rgb']:
-                variable = tf.devide(tf.add_n([sess1.run(variable.name), sess2.run(variable.name)]), 2)
+                print(variable.name)
+                assign_op = tf.assign(variable, tf.divide(tf.add_n([sess1.run(variable.name), sess2.run(variable.name), sess3.run(variable.name)]), 3))
+                sess.run(assign_op)
     
     if mode in ['flow']:
         for variable in tf.global_variables():
             tmp = variable.name.split('/')
             if tmp[0] == _SCOPE['flow']:
-                variable = tf.devide(tf.add_n([sess1.run(variable.name), sess2.run(variable.name)]), 2)
+                assign_op = tf.assign(variable, tf.divide(tf.add_n([sess1.run(variable.name), sess2.run(variable.name), sess3.run(variable.name)]), 3))
+                sess.run(assign_op)
+                
+    #variable = tf.global_variables()[0]
+    #print(sess.run(variable))
+    #print(variable.name)
     
-    saver = tf.Saver()
-    saver.save(sess, os.path.join(log_dir, dataset+'_'+mode))
+    
+    saver = tf.train.Saver()
+    saver.save(sess, os.path.join(log_dir, dataset+'_'+mode), global_step=3)
+    
     # start a new session and restore the fine-tuned model
     '''
     sess = tf.Session()
