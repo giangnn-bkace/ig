@@ -281,7 +281,7 @@ def main(dataset='ucf101', mode='rgb', split=1):
                 logging.info('Epoch%d, test accuracy: %.3f' %
                              (train_data.epoch_completed, accuracy))
                 # saving the best params in test set
-                if (epoch_completed > 39):
+                if (epoch_completed > 0):
                     saver2.save(sess, os.path.join(log_dir, test_data.name+'_'+train_data.mode), epoch_completed)
                 sess.run(train_init_op)
     train_writer.close()
