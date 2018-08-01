@@ -15,9 +15,9 @@ import i3d
 from lib.action_dataset import Action_Dataset
 from lib.action_dataset import split_data
 
-_BASE_LR = 0.0001
-_MAX_LR = 0.001
-_STEP_SIZE_FACTOR = 5
+_BASE_LR = 0.00005
+_MAX_LR = 0.002
+_STEP_SIZE_FACTOR = 1
 
 _BATCH_SIZE = 6
 _CLIP_SIZE = 15
@@ -281,7 +281,8 @@ def main(dataset='ucf101', mode='rgb', split=1):
                 logging.info('Epoch%d, test accuracy: %.3f' %
                              (train_data.epoch_completed, accuracy))
                 # saving the best params in test set
-                saver2.save(sess, os.path.join(log_dir, test_data.name+'_'+train_data.mode), step)
+                if (epoch_completed > 39):
+                    saver2.save(sess, os.path.join(log_dir, test_data.name+'_'+train_data.mode), epoch_completed)
                 sess.run(train_init_op)
     train_writer.close()
     sess.close()
